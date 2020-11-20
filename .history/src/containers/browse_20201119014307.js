@@ -1,9 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Fuse from 'fuse.js';
 import { Card, Header, Loading, Player } from '../components';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
-import { firebase } from '../lib/firebase.prod';
+import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './profiles';
 import { FooterContainer } from './footer';
 
@@ -14,6 +14,7 @@ export function BrowseContainer({ slides }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [slideRows, setSlideRows] = useState([]);
 
+  const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
 
   useEffect(() => {
