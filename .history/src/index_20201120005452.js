@@ -2,8 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import 'normalize.css';
 import App from './app';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-
 import { GlobalStyles } from './global-styles';
 import { firebase } from './lib/firebase.prod.js';
 import { FirebaseContext } from './context/firebase';
@@ -18,4 +16,3 @@ render(
     document.getElementById('root'),
 );
 
-serviceWorkerRegistration.register();

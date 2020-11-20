@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import 'normalize.css';
 import App from './app';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import * as serviceWorker from './serviceWorker.js';
 
 import { GlobalStyles } from './global-styles';
 import { firebase } from './lib/firebase.prod.js';
@@ -18,4 +18,4 @@ render(
     document.getElementById('root'),
 );
 
-serviceWorkerRegistration.register();
+serviceWorker.register();
